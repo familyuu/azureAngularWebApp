@@ -6,14 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   value = 'World';
-  response: any;
+  status: any;
 
   constructor(private http: HttpClient) {}
 
   test_click() {
-    this.http.get<any>('https://api.publicapis.org/entries').subscribe(
+    this.http.get<any>('https://dog.ceo/api/breeds/image/random').subscribe(
       (res) => {
-        this.response = res;
+        this.status = res.status;
       },
       (error) => {
         this.response = error.message ? error.message : "Error"
