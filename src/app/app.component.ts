@@ -16,7 +16,7 @@ export class AppComponent {
         this.status = res.status;
       },
       (error) => {
-        this.response = error.message ? error.message : "Error"
+        this.status = error.message ? error.message : "Error"
       }
     );
   }
